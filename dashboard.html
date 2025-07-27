@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard - Sports Buddy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="dashboard">
+    <h2>Welcome, {{ session['user_name'] }}</h2>
+
+    <div class="dashboard-actions">
+      <a href="/add_event" class="btn">+ Add New Event</a>
+      <a href="/explore" class="btn">🌍 Explore Events</a>
+      <a href="/logout" class="btn logout">Logout</a>
+    </div>
+
+    <h3>Your Events:</h3>
+
+    {% if events %}
+      <ul class="event-list">
+        {% for event in events %}
+          <li>
+            <strong>{{ event[1] }}</strong> - {{ event[2] }}, {{ event[3] }}<br>
+            <small>{{ event[5] }} @ {{ event[6] }}</small><br>
+            <span>{{ event[4] }} | {{ event[7] }}</span><br>
+            <em>{{ event[8] }}</em><br>
+            <div class="event-actions">
+              <a href="/edit_event/{{ event[0] }}" class="btn edit">✏️ Edit</a>
+              <a href="/delete_event/{{ event[0] }}" class="btn delete" onclick="return confirm('Are you sure?')">🗑️ Delete</a>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>You haven't created any events yet.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

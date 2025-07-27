@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Event - Sports Buddy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Post a New Sports Event</h2>
+    <form method="POST">
+      <input type="text" name="sport" placeholder="Sport Name (e.g. Football)" required>
+      <input type="text" name="city" placeholder="City" required>
+      <input type="text" name="area" placeholder="Local Area or Landmark" required>
+      <input type="text" name="skill_level" placeholder="Skill Level (Beginner/Intermediate/Pro)" required>
+      <input type="date" name="date" required>
+      <input type="time" name="time" required>
+      <input type="text" name="location" placeholder="Exact Location" required>
+      <textarea name="description" placeholder="Event Description (optional)"></textarea>
+      <button type="submit">Create Event</button>
+    </form>
+    <a href="/dashboard" class="btn">← Back to Dashboard</a>
+  </div>
+</body>
+</html>

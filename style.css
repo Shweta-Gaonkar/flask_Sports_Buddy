@@ -1,0 +1,156 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f8ff, #e0f7fa);
+  min-height: 100vh;
+  padding: 20px;
+  color: #333;
+}
+
+/* Headings */
+h2, h3 {
+  color: #004d66;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Container */
+.form-container,
+.dashboard {
+  background-color: #fff;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Buttons */
+form button,
+.btn {
+  background-color: #00acc1;
+  color: white;
+  padding: 12px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+  display: inline-block;
+}
+
+form button:hover,
+.btn:hover {
+  background-color: #00838f;
+}
+
+/* Logout and action buttons */
+.btn.logout {
+  background-color: #e53935;
+}
+.btn.logout:hover {
+  background-color: #c62828;
+}
+.btn.edit {
+  background-color: #ffb300;
+  color: #fff;
+}
+.btn.edit:hover {
+  background-color: #ffa000;
+}
+.btn.delete {
+  background-color: #f44336;
+}
+.btn.delete:hover {
+  background-color: #d32f2f;
+}
+.btn.join {
+  background-color: #4caf50;
+}
+.btn.join:hover {
+  background-color: #388e3c;
+}
+
+/* Event list */
+.event-list {
+  list-style: none;
+  padding: 0;
+}
+.event-list li {
+  background-color: #f1f1f1;
+  margin: 15px 0;
+  padding: 18px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  line-height: 1.5;
+}
+
+.event-actions {
+  margin-top: 12px;
+}
+.event-actions .btn {
+  margin-right: 8px;
+}
+
+/* Action links container */
+.dashboard-actions {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.dashboard-actions .btn {
+  margin: 0 10px 10px;
+}
+
+/* Form textarea */
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Links */
+a {
+  color: #00796b;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .form-container,
+  .dashboard {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .btn, form button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .event-actions .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}

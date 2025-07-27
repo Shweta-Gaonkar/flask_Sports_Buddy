@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Event - Sports Buddy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Edit Your Event</h2>
+    <form method="POST">
+      <input type="text" name="sport" value="{{ event[1] }}" required>
+      <input type="text" name="city" value="{{ event[2] }}" required>
+      <input type="text" name="area" value="{{ event[3] }}" required>
+      <input type="text" name="skill_level" value="{{ event[4] }}" required>
+      <input type="date" name="date" value="{{ event[5] }}" required>
+      <input type="time" name="time" value="{{ event[6] }}" required>
+      <input type="text" name="location" value="{{ event[7] }}" required>
+      <textarea name="description">{{ event[8] }}</textarea>
+      <button type="submit">Update Event</button>
+    </form>
+    <a href="/dashboard" class="btn">← Back to Dashboard</a>
+  </div>
+</body>
+</html>

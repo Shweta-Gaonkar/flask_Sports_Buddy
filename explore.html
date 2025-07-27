@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Explore Events - Sports Buddy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="dashboard">
+    <h2>Explore Events Hosted by Others</h2>
+
+    <div class="dashboard-actions">
+      <a href="/dashboard" class="btn">← Back to My Dashboard</a>
+      <a href="/logout" class="btn logout">Logout</a>
+    </div>
+
+    {% if events %}
+      <ul class="event-list">
+        {% for event in events %}
+          <li>
+            <strong>{{ event[1] }}</strong> - {{ event[2] }}, {{ event[3] }}<br>
+            <small>{{ event[5] }} @ {{ event[6] }}</small><br>
+            <span>{{ event[4] }} | {{ event[7] }}</span><br>
+            <em>{{ event[8] }}</em><br>
+            <p><strong>Host:</strong> {{ event[10] }}</p>
+            <a href="/join/{{ event[0] }}" class="btn join">Join</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No events found in your area yet.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
